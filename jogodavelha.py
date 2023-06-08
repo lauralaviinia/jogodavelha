@@ -157,12 +157,20 @@ while op != 2:
                         vitoria_jogador += 1
                     if resultado == "O":
                         vitoria_cpu += 1
+                #o código a seguir é usado para computar os pontos em um arquivo txt para fazer o ranking
+                    arquivo = open("arquivo do ranking.txt", "w")
+                    arquivo.write("Vitorias do jogador: ")
+                    arquivo.write(str(vitoria_jogador))
+                    arquivo.write("Vitortias do computador: ")
+                    arquivo.write(str(vitoria_cpu))
+                    arquivo.close()
+
                 else:
                     print("Resultado empatado")
                     redefinir()
                 continuarJogando = input("Deseja começar uma nova partida? [s/n]:")
                 if continuarJogando == "n":
-                    print("""    [ 4 ] Deseja sair do jogo?: 
+                    print("""                    [ 4 ] Deseja sair do jogo?: 
                     [ 5 ] deseja ver o ranking? :
                     """)
                     opf = 0
@@ -171,7 +179,10 @@ while op != 2:
                         print("voce saiu do jogo")
                         exit()
                     if opf == 5 :
-                        print("Vitórias do jogador: ", vitoria_jogador, "Vitórias da cpu: ", vitoria_cpu)
+                    #código usado para mostrar na tela o ranking
+                        arquivo = open("arquivo do ranking.txt", "r")
+                        print(arquivo.read())
+                        arquivo.close()
                         exit()
 
 
@@ -215,6 +226,3 @@ while op != 2:
 
     if op == 3:
         print("Jogo criado por Laura Lavínia e Victor Eduardo!")
-
-    else:
-        print("opção invalida")
