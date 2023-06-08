@@ -25,7 +25,7 @@ while op != 2:
         ]
 
 
-        # regenciamento de tela - função
+        # gerenciamento de tela - função
         def tela():  # o comando cls é só para windows
             os.system("cls")  # limpando a tela com o comando "os"
             print("    0    1    2")  # colunas
@@ -37,7 +37,7 @@ while op != 2:
             print("Jogadas: ", numDeJogadas)  # variável convertida para uma string
 
 
-        # regenciamento de jogadas do player - função
+        # gerenciamento de jogadas do player - função
         def vezDoJogador():
             print("Sua vez de jogar:")
             global jogador
@@ -58,7 +58,7 @@ while op != 2:
                     print("Linha e ou coluna inválida tente novamente!")
 
 
-        # regenciamento de jogadas da máquina - função
+        # gerenciamento de jogadas da máquina - função
         def vezDaCPU():
             print("Vez do computador:")
             global jogador
@@ -84,7 +84,7 @@ while op != 2:
             resultado = "n"  # considerando que ainda não houve vitória ou empate
             continuarJogando = "s"
 
-            # Verifica empate
+            # verifica empate
             if numDeJogadas >= maxJogadas:
                 resultado = "E"
 
@@ -157,7 +157,7 @@ while op != 2:
                         vitoria_jogador += 1
                     if resultado == "O":
                         vitoria_cpu += 1
-                #o código a seguir é usado para computar os pontos em um arquivo txt para fazer o ranking
+                # o código a seguir é usado para computar os pontos em um arquivo txt para fazer o ranking
                     arquivo = open("arquivo do ranking.txt", "w")
                     arquivo.write("Vitorias do jogador: ")
                     arquivo.write(str(vitoria_jogador))
@@ -179,7 +179,7 @@ while op != 2:
                         print("voce saiu do jogo")
                         exit()
                     if opf == 5 :
-                    #código usado para mostrar na tela o ranking
+                    # código usado para mostrar na tela o ranking
                         arquivo = open("arquivo do ranking.txt", "r")
                         print(arquivo.read())
                         arquivo.close()
